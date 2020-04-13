@@ -29,7 +29,7 @@ try {
 	$stmt->bindParam( ++$paridx, $_GET['cont_url_web'], PDO::PARAM_STR);
 	if (!($_GET['cont_id']==-1)) { $stmt->bindParam( ++$paridx, $_GET['cont_id'], PDO::PARAM_INT); }	
 	$stmt->execute();
-/*	print_r ($_GET) . ' <br> <br> '; darney
+/*	print_r ($_GET) . ' <br> <br> ';
 	print_r ($stmt) . ' <br> <br> ';
 	print $stmt->debugDumpParams() . "<br><br>";
 	print "<<br>br>Row count: " . $stmt->RowCount() . "<br>"; */
