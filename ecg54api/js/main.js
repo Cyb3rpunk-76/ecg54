@@ -239,6 +239,7 @@ function LoadNetDevices(xml) {
 	if ( x[i].getElementsByTagName("net_device_status")[0].childNodes[0].nodeValue == "up") {
        tdstatus = "<tr class=\"up\"><td><ul class=\"up\"><li></li></ul> [ UP ] "; } else {
 	   tdstatus = "<tr><td style=\"color:red;font-weight:bold\"><ul class=\"down\"><li></li></ul> [ DOWN ] "; }   
+    tdstatus +=	" &emsp; <img src=\"ecg54api/img/device_types/"+x[i].getElementsByTagName("net_devicetype_id")[0].childNodes[0].nodeValue+".png\" "+tamanhoimagens+">";
     table += tdstatus + "</td><td style=\"text-align:center\">";
     table += x[i].getElementsByTagName("net_device_last_check")[0].childNodes[0].nodeValue + "</td><td>" ;
     table += x[i].getElementsByTagName("net_device_ipadd")[0].childNodes[0].nodeValue + "</td><td>" ;
@@ -265,6 +266,14 @@ function loadXMLEvents() {
   var foopicker = new FooPicker({  id: 'datepicker',  dateFormat: 'dd-MM-yyyy' });
 }
 
+function loadXMLVideos() {
+  var today = new Date();
+  var sdate = pad(today.getDate(),2)+'-'+pad((today.getMonth()+1),2)+'-'+today.getFullYear();
+  var datepicker = "<input type=\"text\" id=\"datepicker\" value=\""+sdate+"\" /><button type = \"button\" onclick = \"RunVideos()\"> Run </button>";
+  document.getElementById("areacomum").innerHTML = datepicker + "<br><br><table id=\"xmlresult\" style=\"height:auto\"></table>" ;
+  var foopicker = new FooPicker({  id: 'datepicker',  dateFormat: 'dd-MM-yyyy' });
+}
+
 function RunEvents() {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -274,6 +283,18 @@ function RunEvents() {
   };
   document.getElementById("xmlresult").innerHTML = "<tr><h2>Carregando dados ...</h2></tr>";
   xmlhttp.open("GET", "ecg54api/eventdate.php?date="+document.getElementById("datepicker").value, true);
+  xmlhttp.send();
+}
+
+function RunVideos() {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+	  document.getElementById("xmlresult").innerHTML = "";	
+      LoadEvents(this);  }
+  };
+  document.getElementById("xmlresult").innerHTML = "<tr><h2>Carregando dados ...</h2></tr>";
+  xmlhttp.open("GET", "ecg54api/videodate.php?date="+document.getElementById("datepicker").value, true);
   xmlhttp.send();
 }
 
