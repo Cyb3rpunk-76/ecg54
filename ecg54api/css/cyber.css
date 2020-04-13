@@ -1,0 +1,37 @@
+#xmlresult {
+  font-family: Tahoma, Verdana, Arial, Sans-Serif;
+  font-size: 12px;
+  height: auto;
+  border-collapse: collapse;
+  width: 100%; }
+
+#xmlresult td, #xmlresult th { border: 1px solid #ddd; padding: 4px; }
+
+#xmlresult ul {
+  list-style-type: none;  
+  height: 20px;
+  margin: 0px; }
+
+#xmlresult ul.up { list-style-image: url(../img/up.png); vertical-align: middle; display: inline-block;	}
+#xmlresult ul.down { list-style-image: url(../img/down.png); vertical-align: middle; display: inline-block;	}
+
+#xmlresult tr:nth-child(even){background-color: #f2f2f2;}
+
+#xmlresult tr.up { font-weight: bold; color: green; }
+#xmlresult tr.up2:nth-child(even) { background-color: #cce6aa; }	
+#xmlresult tr.up2:nth-child(odd) { background-color: #b4c997; }	
+	
+#xmlresult tr:hover {background-color: #ddd;}
+
+#xmlresult th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #0072BC;
+  color: white; }
+  
+label {
+  display: inline-block;
+  width: 140px;
+  text-align: left;
+}​  
