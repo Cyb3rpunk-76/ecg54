@@ -28,6 +28,7 @@ try {
 		GetSQLFieldForXMLReturn('net_device_status') . ", " .
 		GetSQLFieldForXMLReturn('net_device_macadd') . ", " .
 		GetSQLFieldForXMLReturn('device_owner') . ", " .
+		GetSQLFieldForXMLReturn('device_type_id') . ", " .
 		GetSQLFieldForXMLReturn('device_type') . ", " .
 		GetSQLFieldForXMLReturn('net_method') . ", " .
 		GetSQLFieldForXMLReturn('net_model') . ", " .
@@ -47,6 +48,7 @@ try {
 		echo '<net_device_status>' . $row[net_device_status] . '</net_device_status>';
 		echo '<net_device_macadd>' . $row[net_device_macadd] . '</net_device_macadd>';
 		echo '<device_owner>' . $row[device_owner] . '</device_owner>';
+		echo '<device_type_id>' . $row[device_type_id] . '</device_type_id>';
 		echo '<device_type>' . $row[device_type] . '</device_type>';
 		echo '<net_method>' . $row[net_method] . '</net_method>';
 		echo '<net_model>' . $row[net_model] . '</net_model>';

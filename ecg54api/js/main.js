@@ -239,7 +239,8 @@ function LoadNetDevices(xml) {
 	if ( x[i].getElementsByTagName("net_device_status")[0].childNodes[0].nodeValue == "up") {
        tdstatus = "<tr class=\"up\"><td><ul class=\"up\"><li></li></ul> [ UP ] "; } else {
 	   tdstatus = "<tr><td style=\"color:red;font-weight:bold\"><ul class=\"down\"><li></li></ul> [ DOWN ] "; }   
-    // tdstatus +=	" &emsp; <img src=\"ecg54api/img/device_types/"+x[i].getElementsByTagName("net_devicetype_id")[0].childNodes[0].nodeValue+".png\" "+tamanhoimagens+">";
+    tdstatus +=	" &emsp; <img src=\"ecg54api/img/device_types/10.png\" "+tamanhoimagens+">";
+	// alert(tdstatus);
     table += tdstatus + "</td><td style=\"text-align:center\">";
     table += x[i].getElementsByTagName("net_device_last_check")[0].childNodes[0].nodeValue + "</td><td>" ;
     table += x[i].getElementsByTagName("net_device_ipadd")[0].childNodes[0].nodeValue + "</td><td>" ;
