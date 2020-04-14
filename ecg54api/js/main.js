@@ -220,7 +220,7 @@ function Requestlist( LoadStruct ) {
   xmlhttp.open("GET", LoadStruct[0].apictrl_view, true);
   xmlhttp.send();
 }
-
+ 
 function LoadNetDevices(xml) {
   var i;
   var currentarea = "---";
@@ -319,7 +319,11 @@ function LoadEvents(xml) {
 		currentdevice = loadeddevice;
 		descevento = x[i].getElementsByTagName("network_when")[0].childNodes[0].nodeValue + ' - <strong>' + x[i].getElementsByTagName("network_eventtype_desc")[0].childNodes[0].nodeValue + '</strong>';
 		semi = ( "<td><strong>" + x[i].getElementsByTagName("net_device_ipadd")[0].childNodes[0].nodeValue + "</strong> [" + x[i].getElementsByTagName("net_device_macadd")[0].childNodes[0].nodeValue + "]</td>" );
-		semi += ( "<td>" + x[i].getElementsByTagName("device_type")[0].childNodes[0].nodeValue + "</td>" );
+		semi += "<td>";
+	    if ( x[i].getElementsByTagName("device_type_id")[0].childNodes[0].nodeValue.trim() !== "-") {
+            semi +=	" &emsp; <img src=\"ecg54api/img/device_types/"+x[i].getElementsByTagName("device_type_id")[0].childNodes[0].nodeValue.trim()+".png\" "+tamanhoimagens+"> &emsp; "; 
+		}
+		semi += ( x[i].getElementsByTagName("device_type")[0].childNodes[0].nodeValue.trim() + "</td>" );
 		semi += ( "<td>" + x[i].getElementsByTagName("net_model")[0].childNodes[0].nodeValue + "</td>" );
 		semi += ( "<td>" + x[i].getElementsByTagName("net_vendor")[0].childNodes[0].nodeValue + "</td>" );
 		semi += ( "<td>" + x[i].getElementsByTagName("net_method")[0].childNodes[0].nodeValue + "</td>" );
