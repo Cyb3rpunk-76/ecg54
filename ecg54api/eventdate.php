@@ -39,6 +39,7 @@ try {
 		GetSQLFieldForXMLReturn('net_device_macadd') . ", " .
 		GetSQLFieldForXMLReturn('network_when') . ", " .
 		GetSQLFieldForXMLReturn('network_eventtype_desc') . ", " .
+		GetSQLFieldForXMLReturn('device_type_id') . ", " .
 		GetSQLFieldForXMLReturn('device_type') . ", " .
 		GetSQLFieldForXMLReturn('net_model') . ", " .
 		GetSQLFieldForXMLReturn('net_vendor') . ", " .
@@ -59,6 +60,7 @@ try {
 		echo '<net_device_macadd>' . $row[net_device_macadd] . '</net_device_macadd>';
 		echo '<network_when>' . $row[network_when] . '</network_when>';
 		echo '<network_eventtype_desc>' . $row[network_eventtype_desc] . '</network_eventtype_desc>';
+		echo '<device_type_id>' . $row[device_type_id] . '</device_type_id>';
 		echo '<device_type>' . $row[device_type] . '</device_type>';
 		echo '<net_model>' . $row[net_model] . '</net_model>';
 		echo '<net_vendor>' . $row[net_vendor] . '</net_vendor>';
